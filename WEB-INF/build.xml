@@ -1,0 +1,19 @@
+<project name="SNS" default="compile" basedir=".">
+	<property name="src" location="src"/>
+	<property name="classes" location="classes"/>
+	<property name="lib" location="lib"/>
+
+	<path id="classpath">
+		<fileset dir="${lib}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+
+	<target name="compile">
+		<javac srcdir="${src}" destdir="${classes}" classpathref="classpath"/>
+	</target>
+
+	<target name="clean">
+		<delete dir="${classes}"/>
+	</target>
+</project>	
